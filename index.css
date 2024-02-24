@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 50px;
+  background-color: #daece0; /* gris */
+  color: #fef9ff; /* blanco */
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.logo {
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #253781; /* Azul opaco */
+}
+
+.contact-info {
+  margin-top: 50px;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+footer {
+  margin-top: 50px;
+  background-color: #0f0981; /* Azul oscuro */
+  padding: 20px 0;
+}
+
+footer a {
+  color: #fef9ff; /* blanco */
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
