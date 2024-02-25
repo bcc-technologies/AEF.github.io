@@ -2,21 +2,19 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="index1.css">
-    <title>AEF Landing Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="index1.css">
+  <title>AEF Landing Page</title>
 </head>
 
 <body>
-    <!-- Creating a section called showcase which houses our entire webpage -->
     <section class="showcase">
         <header>
             <h2 class="logo">AEF</h2>
             <div class="toggle"></div>
         </header>
-        <!-- This will loop over the video on the landing page -->
         <video src="static/Earth_Video.mp4" muted loop autoplay></video>
 
         <div class="overlay"></div>
@@ -24,40 +22,102 @@
         <div class="text">
             <h2>Beyond the Atmosphere </h2>
             <h3>At Its Finest in Space</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Id animi molestiae, quod ut corrupti modi et
-                natus eum iure possimus.</p>
-                <a href="#">More Info</a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id animi molestiae, quod ut corrupti modi et natus eum iure possimus.</p>
+            <a href="#">More Info</a>
         </div>
 
         <ul class="social">
             <li><a href="#"><img src="facebook.png" alt=""></a></li>
             <li><a href="https://www.instagram.com/blacklightning1011/" target="blank"><img src="instagram.png" alt=""></a></li>
         </ul>
+
+        <a href="#" class="scroll-down">↓</a>
+
     </section>
 
-    <!-- Menu class for when the user clicks the hamburger menu and shifts the page to the left -->
-    <div class="menu">
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">News</a></li>
-            <li><a href="#">NASA</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </div>
+    <section class="news-section">
+        <h2>Noticias y novedades</h2>
+        <div class="text-container">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Nullam eget neque hendrerit, placerat risus vel, tincidunt tellus. Nam sed tortor velit. Fusce sit amet lacus eget elit ultricies dignissim.</p>
+          <p>Proin ac magna eget lacus accumsan aliquam. Donec placerat enim vel orci posuere, eget feugiat diam hendrerit. Sed euismod risus eget massa ultricies, ac hendrerit eros placerat. Fusce euismod neque sed neque ullamcorper, vitae aliquam dui semper. Nam eget lacus eget lectus feugiat convallis.</p>
+        </div>
+        <div class="news-container">
+          <div class="news-item">
+            <img src="news-image1.jpg" alt="News image">
+            <h3>Título de la noticia 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna.</p>
+          </div>
+          <div class="news-item">
+            <img src="news-image2.jpg" alt="News image">
+            <h3>Título de la noticia 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna.</p>
+          </div>
+        </div>
+    </section>
+      
+    
+  <div class="menu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">News</a></li>
+      <li><a href="#">NASA</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
 
-    <!-- JavaScript which selects both the toggle and showcase class in order to create an event for when 
-    the user clicks the hamburger menu toggling both between an active state -->
-    <script>
-        const menuToggle = document.querySelector('.toggle')
-        const showcase = document.querySelector('.showcase')
+  <script>
+    const menuToggle = document.querySelector('.toggle');
+    const showcase = document.querySelector('.showcase');
 
-        menuToggle.addEventListener('click', () => { 
-            menuToggle.classList.toggle('active')
-            showcase.classList.toggle('active')
-        })
-    </script>
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      showcase.classList.toggle('active');
+    });
+  </script>
 </body>
 
+
+<!--footer section starts-->
+<footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h2 class="logo">Tu Logo</h2>
+          <p>Asociación de estudiantes de física de la universidad autónoma de Santo Domingo.</p>
+          <ul class="social-media">
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h2>Enlaces</h2>
+          <ul class="links">
+            <li><a href="#">Página 1</a></li>
+            <li><a href="#">Página 2</a></li>
+            <li><a href="#">Página 3</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h2>Contacto</h2>
+          <ul class="contact-info">
+            <li><i class="fas fa-phone"></i> +1234567890</li>
+            <li><i class="fas fa-envelope"></i> aef.uasd@gmail.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> F36M+VJW, Av. Paulo III, Santo Domingo 10105</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2024 - AEF. Todos los derechos reservados.</p>
+      </div>
+    </div>
+</footer>
+  
+  
+  <!--footer section ends-->
+
 </html>
+
+
