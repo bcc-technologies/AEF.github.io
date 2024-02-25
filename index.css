@@ -46,20 +46,29 @@ form {
   background-color: #fff;
 }
 
-/* Optional: Add responsive styles */
-@media (max-width: 768px) {
-  form {
-    width: 80%;
-    margin-left: 5%;
-  }
-}
-
 label {
   position: relative;
   display: block;
   margin-bottom: 10px;
   font-size: 16px;
 }
+
+/* Optional: Add responsive styles */
+@media (max-width: 768px) {
+  form {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  h1,h2 {
+    max-width: 95%;
+  }
+
+  label {
+    max-width: 95%;
+  }
+}
+
 
 input[type="email"],
 textarea {
