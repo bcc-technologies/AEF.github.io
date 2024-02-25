@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index1.css">
+    <title>AEF Landing Page</title>
+</head>
+
+<body>
+    <!-- Creating a section called showcase which houses our entire webpage -->
+    <section class="showcase">
+        <header>
+            <h2 class="logo">AEF</h2>
+            <div class="toggle"></div>
+        </header>
+        <!-- This will loop over the video on the landing page -->
+        <video src="static/Earth_Video.mp4" muted loop autoplay></video>
+
+        <div class="overlay"></div>
+
+        <div class="text">
+            <h2>Beyond the Atmosphere </h2>
+            <h3>At Its Finest in Space</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Id animi molestiae, quod ut corrupti modi et
+                natus eum iure possimus.</p>
+                <a href="#">More Info</a>
+        </div>
+
+        <ul class="social">
+            <li><a href="#"><img src="facebook.png" alt=""></a></li>
+            <li><a href="https://www.instagram.com/blacklightning1011/" target="blank"><img src="instagram.png" alt=""></a></li>
+        </ul>
+    </section>
+
+    <!-- Menu class for when the user clicks the hamburger menu and shifts the page to the left -->
+    <div class="menu">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">News</a></li>
+            <li><a href="#">NASA</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- JavaScript which selects both the toggle and showcase class in order to create an event for when 
+    the user clicks the hamburger menu toggling both between an active state -->
+    <script>
+        const menuToggle = document.querySelector('.toggle')
+        const showcase = document.querySelector('.showcase')
+
+        menuToggle.addEventListener('click', () => { 
+            menuToggle.classList.toggle('active')
+            showcase.classList.toggle('active')
+        })
+    </script>
+</body>
+
+</html>
