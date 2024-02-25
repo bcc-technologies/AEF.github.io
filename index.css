@@ -60,15 +60,17 @@ label {
     margin-left: 5%;
   }
 
-  h1,h2 {
-    max-width: 95%;
-  }
-
   label {
     max-width: 95%;
   }
 }
 
+@media (max-width: 360px) {
+  h1,h2 {
+    word-break:break-all;
+  }
+
+}
 
 input[type="email"],
 textarea {
