@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload File to GitHub</title>
+</head>
+<body>
+    <h1>Upload File to GitHub</h1>
+    <input type="file" id="fileInput">
+    <button onclick="uploadFile()">Commit to GitHub</button>
+    <p id="message"></p>
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const message = document.getElementById('message');
+
+        function uploadFile() {
+            const file = fileInput.files[0];
+            if (!file) {
+                message.textContent = 'Please select a file to upload!';
+                return;
+            }
+
+            // Replace with your GitHub API token and repository details
+            const url = 'https://api.github.com/repos/your-username/your-repo/contents/path/to/file';
+            const token = 'your_github_access_token'; // Replace with your access token
+
+            // Prepare data for API request
+            const formData = new FormData();
+            formData.append('path', file.name);
+            formData.append('message', 'Uploaded file');
+            formData.append('content', file);
+
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    Authorization: `token ${token}`,
+                },
+                body: formData,
+            })
+            .then(response => response.json())
+            .then(data => {
+                message.textContent = 'File uploaded and committed successfully!';
+            })
+            .catch(error => {
+                message.textContent = `Error uploading file: ${error.message}`;
+            });
+        }
+    </script>
+</body>
+</html>
