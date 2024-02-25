@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Upload File to GitHub</title>
+    <title>Subir archivos al blog</title>
 </head>
 <body>
     <h1>Upload File to GitHub</h1>
     <input type="file" id="fileInput">
-    <button onclick="uploadFile()">Commit to GitHub</button>
+    <button onclick="uploadFile()">Enviar</button>
     <p id="message"></p>
     <script>
         const fileInput = document.getElementById('fileInput');
@@ -15,13 +15,14 @@
         function uploadFile() {
             const file = fileInput.files[0];
             if (!file) {
-                message.textContent = 'Please select a file to upload!';
+                message.textContent = 'Selecciona un archivo para subir!';
                 return;
             }
+            https://github.com/
 
             // Replace with your GitHub API token and repository details
-            const url = 'https://api.github.com/repos/your-username/your-repo/contents/path/to/file';
-            const token = 'your_github_access_token'; // Replace with your access token
+            const url = 'https://api.github.com/bcc-technologies/AEF.github.io';
+            const token = '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'; // Replace with your access token
 
             // Prepare data for API request
             const formData = new FormData();
