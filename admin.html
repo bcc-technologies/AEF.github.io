@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Subir archivos al blog</title>
+    <title>Upload File to GitHub</title>
+    <style>
+        #progress-container {
+            width: 300px;
+            border: 1px solid #ddd;
+            padding: 5px;
+            margin: 10px auto;
+        }
+
+        #progress-bar {
+            background-color: #ddd;
+            height: 5px;
+            width: 0%;
+        }
+    </style>
 </head>
 <body>
-    <h1>Upload File to GitHub</h1>
+    <h1>Subir archivos al blog</h1>
     <input type="file" id="fileInput">
     <button onclick="uploadFile()">Enviar</button>
     <p id="message"></p>
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+        <span id="progress-text"></span>
+    </div>
     <script>
         const fileInput = document.getElementById('fileInput');
         const message = document.getElementById('message');
+        const progressBar = document.getElementById('progress-bar');
+        const progressText = document.getElementById('progress-text');
 
         function uploadFile() {
             const file = fileInput.files[0];
@@ -18,11 +38,15 @@
                 message.textContent = 'Selecciona un archivo para subir!';
                 return;
             }
-            https://github.com/
 
-            // Replace with your GitHub API token and repository details
+            // **Security: Remove access token from client-side code**
+            // Do not include the access token in the HTML or script.
+            // Instead, use server-side logic to handle authentication
+            // and authorization securely.
+
+            // Replace with placeholder values for the following:
             const url = 'https://api.github.com/repos/bcc-technologies/AEF.github.io/contents/path/to/file';
-            const token = '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'; // Replace with your access token
+            const token = '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';
 
             // Prepare data for API request
             const formData = new FormData();
@@ -33,16 +57,26 @@
             fetch(url, {
                 method: 'PUT',
                 headers: {
-                    Authorization: `token ${token}`,
+                    Authorization: `token ${token}`, // Token should not be included here
                 },
                 body: formData,
             })
             .then(response => response.json())
             .then(data => {
                 message.textContent = 'File uploaded and committed successfully!';
+                progressBar.style.width = '100%';
+                progressText.textContent = '100%';
             })
             .catch(error => {
                 message.textContent = `Error uploading file: ${error.message}`;
+                progressBar.style.width = '0%';
+                progressText.textContent = '0%';
+            })
+            .onprogress(event => {
+                // Calculate progress percentage
+                const progress = Math.round((event.loaded / event.total) * 100);
+                progressBar.style.width = `${progress}%`;
+                progressText.textContent = `${progress}%`;
             });
         }
     </script>
