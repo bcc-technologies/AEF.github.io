@@ -65,8 +65,8 @@
             // You can implement your authentication logic here
             // For a static website, you might just check if the username and password match some predefined values
             if (username === 'admin' && password === 'password') {
-                alert('Login successful');
-                // Redirect to another page or perform some action after successful login
+                // Redirect to admin.html
+                window.location.href = 'admin.html';
             } else {
                 alert('Invalid username or password');
             }
