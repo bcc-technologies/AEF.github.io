@@ -69,22 +69,21 @@
             };
         
             // Make a POST request to the Flask API endpoint
-            fetch('https://barreiro14.pythonanywhere.com', {
+            fetch('https://barreiro14.pythonanywhere.com/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(data)
             })
-            .then(response => response.json())
-            .then(data => {
-                // Handle the response
-                if (data.status === 'success') {
+            .then(response => {
+                if (response.status === 200) {
                     // If login successful, redirect to admin.html
+                    alert('Login successful');
                     window.location.href = 'admin.html';
                 } else {
                     // If login failed, display error message
-                    alert(data.message);
+                    alert('Invalid username or password');
                 }
             })
             .catch(error => {
