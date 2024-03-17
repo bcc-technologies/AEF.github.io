@@ -69,7 +69,7 @@
             };
         
             // Make a POST request to the Flask API endpoint
-            fetch('https://barreiro14.pythonanywhere.com/', {
+            fetch('https://barreiro14.pythonanywhere.com', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -77,17 +77,19 @@
                 body: JSON.stringify(data)
             })
             .then(response => {
-                if (response.status === 200) {
-                    // If login successful, redirect to admin.html
-                    alert('Login successful');
-                    window.location.href = 'admin.html';
+                if (response.ok) {
+                    return response.json();
                 } else {
-                    // If login failed, display error message
-                    alert('Invalid username or password');
+                    throw new Error('Invalid username or password');
                 }
             })
+            .then(data => {
+                // Handle the response
+                alert('Login successful');
+                window.location.href = 'admin.html';
+            })
             .catch(error => {
-                console.error('Error:', error);
+                alert(error.message);
             });
         });
     </script>
