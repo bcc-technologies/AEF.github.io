@@ -76,19 +76,20 @@
                 },
                 body: JSON.stringify(data)
             })
-            .then(response => response.json())
-            .then(data => {
-                // Handle the response
-                if (data.status === 'success') {
-                    // If login successful, redirect to admin.html
-                    window.location.href = 'admin.html';
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
                 } else {
-                    // If login failed, display error message
-                    alert(data.message);
+                    throw new Error('Invalid username or password');
                 }
             })
+            .then(data => {
+                // Handle the response
+                alert('Login successful');
+                window.location.href = 'admin.html';
+            })
             .catch(error => {
-                console.error('Error:', error);
+                alert(error.message);
             });
         });
     </script>
