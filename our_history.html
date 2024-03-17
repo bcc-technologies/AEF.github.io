@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="index1.css">
+  <link rel="stylesheet" href="our_history.css">
   <title>AEF Landing Page</title>
 </head>
 
@@ -13,7 +13,6 @@
     <section class="showcase">
         <header>
             <h2 class="logo">AEF</h2>
-            <!-- <h2><img src="static/Asset 22x.png" alt="BCC Technologies" class="logo"></h2> -->
             <div class="toggle"></div>
         </header>
         <video src="static/Earth_Video.mp4" muted loop autoplay></video>
@@ -21,10 +20,10 @@
         <div class="overlay"></div>
 
         <div class="text">
-            <h2>Comparte tu pasión por la física</h2>
+            <h2 style="margin-left: 24vw; max-width: fit-content;">Nuestra historia</h2>
             <!-- <h3>At Its Finest in Space</h3> -->
-            <p>Asociación de estudiantes de física de la universidad autónoma de Santo Domingo.</p>
-            <a href="#">Más Info</a>
+            <!-- <p>Asociación de estudiantes de física de la universidad autónoma de Santo Domingo.</p> -->
+            <!-- <a href="#">Más Info</a> -->
         </div>
 
         <ul class="social">
@@ -32,17 +31,30 @@
             <li><a href="https://www.instagram.com/blacklightning1011/" target="blank"><img src="instagram.png" alt=""></a></li>
         </ul>
 
-        <a href="#" class="scroll-down">↓</a>
+        <a href="#news" class="scroll-down">↓</a>
 
     </section>
 
     <section class="news-section">
-        <h2>Noticias y novedades</h2>
+        <h2>Nuestros inicios</h2>
         <div class="text-container">
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Nullam eget neque hendrerit, placerat risus vel, tincidunt tellus. Nam sed tortor velit. Fusce sit amet lacus eget elit ultricies dignissim.</p>
           <p>Proin ac magna eget lacus accumsan aliquam. Donec placerat enim vel orci posuere, eget feugiat diam hendrerit. Sed euismod risus eget massa ultricies, ac hendrerit eros placerat. Fusce euismod neque sed neque ullamcorper, vitae aliquam dui semper. Nam eget lacus eget lectus feugiat convallis.</p>
         </div>
-        <div class="news-container">
+
+        <h2>Nuestra evolución</h2>
+        <div class="text-container">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Nullam eget neque hendrerit, placerat risus vel, tincidunt tellus. Nam sed tortor velit. Fusce sit amet lacus eget elit ultricies dignissim.</p>
+          <p>Proin ac magna eget lacus accumsan aliquam. Donec placerat enim vel orci posuere, eget feugiat diam hendrerit. Sed euismod risus eget massa ultricies, ac hendrerit eros placerat. Fusce euismod neque sed neque ullamcorper, vitae aliquam dui semper. Nam eget lacus eget lectus feugiat convallis.</p>
+        </div>
+
+        <h2>La actualidad</h2>
+        <div class="text-container">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna. Nullam eget neque hendrerit, placerat risus vel, tincidunt tellus. Nam sed tortor velit. Fusce sit amet lacus eget elit ultricies dignissim.</p>
+          <p>Proin ac magna eget lacus accumsan aliquam. Donec placerat enim vel orci posuere, eget feugiat diam hendrerit. Sed euismod risus eget massa ultricies, ac hendrerit eros placerat. Fusce euismod neque sed neque ullamcorper, vitae aliquam dui semper. Nam eget lacus eget lectus feugiat convallis.</p>
+        </div>
+
+        <!-- <div class="news-container">
           <div class="news-item">
             <img src="news-image1.jpg" alt="News image">
             <h3>Título de la noticia 1</h3>
@@ -53,33 +65,21 @@
             <h3>Título de la noticia 2</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sit amet pretium urna.</p>
           </div>
-        </div>
+        </div> -->
+
     </section>
       
     
-    <div class="menu">
-      <ul>
-        <li><a href="#">Inicio</a></li>
+  <div class="menu">
+    <ul>
+      <li><a href="index1.html">Inicio</a></li>
+      <li><a href="./our_history.html">Nuestra Historia</a></li>
+      <li><a href="#">NASA</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
 
-        <li class="dropdown"> <a href="#" class="dropdown-toggle">Nosotros</a>
-          <ul class="dropdown-content"> <li><a href="./our_history.html">Nuestra historia</a></li>
-            <li><a href="#">Contacto</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown"> <a href="#" class="dropdown-toggle">Eventos</a>
-          <!-- <ul class="dropdown-content"> <li><a href="#">Misiones Espaciales</a></li>
-            <li><a href="#">Exploración Marciana</a></li>
-            <li><a href="#">Astronautas</a></li>
-          </ul> -->
-        </li>
-
-
-        <li><a href="#">Blog</a></li>
-        
-      </ul>
-    </div>
-    
   <script>
     const menuToggle = document.querySelector('.toggle');
     const showcase = document.querySelector('.showcase');
@@ -93,7 +93,7 @@
 
 
 <!--footer section starts-->
-<footer class="footer">
+<footer class="footer"  id="news">
     <div class="container">
       <div class="row">
         <div class="col-md-4">

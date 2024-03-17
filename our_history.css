@@ -153,11 +153,37 @@
     transform: scale(0.5) translateY(-15px);
 }
 
+.menu { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu ul { 
+    position: relative;
+    list-style: none;
+}
+
+.menu ul li a{ 
+    text-decoration: none;
+    font-size: 24px;
+    color: #111;
+}
+
+.menu ul li a:hover { 
+    color: blue;
+}
+
 /* Add styles for the scroll-down element */
 .scroll-down {
     position: relative;
     top: 45vh;
-    right: 40vw;
+    right: 36%;
     font-size: 2em;
     color: white; /* Adjust color as needed */
     text-decoration: none;
@@ -167,7 +193,7 @@
 
 @media (max-width: 900px) {
   .scroll-down {
-    right: 40%;
+    right: 55%;
   }
 
 }
@@ -414,74 +440,3 @@
     }
   }
   
-
-
-
-
-
-/* Basic menu styles */
-
-.menu { 
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 26%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-}
-
-.menu ul { 
-  position: relative;
-  list-style: none;
-}
-
-.menu ul li a{ 
-  text-decoration: none;
-  font-size: 24px;
-  color: #111;
-}
-
-.menu ul li a:hover { 
-  color: blue;
-}
-
-
-.menu li {
-  display: block; /* Change to block for new line on each item */
-  padding: 10px 20px;
-}
-
-.menu a {
-  text-decoration: none;
-  color: #333;
-}
-
-/* Dropdown styles */
-.dropdown {
-  position: relative; /* Necessary for absolute positioning of submenu */
-}
-
-.dropdown-content {
-  display: none; /* Hide submenu initially */
-  position: relative; /* Position submenu relative to dropdown button */
-  background-color: #f1f1f1;
-  min-width: 160px; /* Set minimum width for submenu */
-  max-width: 250px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1; /* Ensure submenu overlaps other content */
-  /* transform: translateX(50%); */
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown:hover .dropdown-content { /* Show submenu on hover */
-  display: block;
-}
