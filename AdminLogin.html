@@ -61,15 +61,35 @@
         
             var username = document.getElementById('username').value;
             var password = document.getElementById('password').value;
+
+            // Create an object with the username and password
+            var data = {
+                username: username,
+                password: password
+            };
         
-            // You can implement your authentication logic here
-            // For a static website, you might just check if the username and password match some predefined values
-            if (username === 'admin' && password === 'password') {
-                // Redirect to admin.html
-                window.location.href = 'admin.html';
-            } else {
-                alert('Invalid username or password');
-            }
+            // Make a POST request to the Flask API endpoint
+            fetch('https://barreiro14.pythonanywhere.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response
+                if (data.status === 'success') {
+                    // If login successful, redirect to admin.html
+                    window.location.href = 'admin.html';
+                } else {
+                    // If login failed, display error message
+                    alert(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
         });
     </script>
 </body>
