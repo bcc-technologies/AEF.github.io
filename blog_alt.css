@@ -2,10 +2,10 @@
 
 /* Variables globales */
 :root {
-    --secundario: #A16C57; /* Cambio de color más cálido */
-    --gris: #EEEEEE; /* Gris más suave */
-    --blanco: #FFFFFF;
-    --primario: #4E69A2; /* Azul más vibrante */
+    --secundario: #784D3C;
+    --gris: #e1e1e1;
+    --blanco: #ffffff;
+    --primario: #253781;
 }
 
 
@@ -28,16 +28,8 @@ body {
 
 /* Contenedor principal */
 .contenedor {
-    max-width: 1200px;
+    width: min(90%, 120rem);
     margin: 0 auto;
-    padding: 20px;
-}
-
-/* Contenido principal */
-.contenido-principal {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    column-gap: 3rem;
 }
 
 /* Enlaces */
@@ -46,29 +38,38 @@ a {
 }
 
 /* Encabezados */
-h1, h2, h3, h4 {
-    margin-bottom: 0.5em; /* Espacio debajo de los encabezados */
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--fuenteHeading);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 4.8rem;
+}
+
+h2 {
+    font-size: 4rem;
 }
 
 h3 {
     font-size: 3.2rem;
-    text-align: center;
-    margin-bottom: 2rem; /* Aumentar el espacio inferior */
+    margin-bottom: 3%;
     margin-top: 2%;
+    margin-left: 5vw;
 }
 
-.blog {
-    display: grid;
-    column-count: 3;
-    justify-content: center;
-    align-items: center;
+h4 {
+    font-size: 2.8rem;
 }
 
+/* Imágenes */
 .blog img {
     max-width: 100%;
-    border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    border-radius: 1%;
+    margin-left: 20vw;
 }
 
 /* Utilidades */
@@ -86,9 +87,7 @@ h3 {
 
 /* Barra de navegación */
 .barra {
-    background-color: var(--primario); /* Fondo de color primario */
-    padding: 10px 20px; /* Padding interno */
-    border-radius: 4px; /* Bordes redondeados */
+    padding-top: 4rem;
 }
 
 .navegacion {
@@ -97,12 +96,10 @@ h3 {
 }
 
 .navegacion__enlace {
-    color: var(--blanco); /* Texto blanco */
-    transition: color 0.3s ease; /* Transición suave al hacer hover */
-}
-
-.navegacion__enlace:hover {
-    color: var(--gris); /* Cambio de color al hacer hover */
+    display: block;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--blanco);
 }
 
 /* Sección principal */
@@ -115,21 +112,9 @@ h3 {
 
 /* Entradas del blog */
 .entrada {
-    background-color: var(--blanco);
-    border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
-    text-align: center; /* Agregado */
-}
-
-.entrada h3 {
-    margin-left: 0; /* Restablecido */
-}
-
-.entrada:hover {
-    transform: translateY(-5px); /* Desplazamiento suave hacia arriba al hacer hover */
+    border-bottom: 1px solid var(--gris);
+    margin-bottom: 2rem;
+    margin-left: -20vw;
 }
 
 .entrada:last-of-type {
@@ -137,17 +122,22 @@ h3 {
     margin-bottom: 0;
 }
 
-
 /* Botón */
 .boton {
-    background-color: var(--secundario); /* Fondo de color secundario */
-    color: var(--blanco); /* Texto blanco */
-    border-radius: 4px; /* Bordes redondeados */
-    transition: background-color 0.3s ease; /* Transición suave de fondo al hacer hover */
+    display: block;
+    font-family: var(--fuenteHeading);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1rem 3rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    border: none;
 }
 
 .boton:hover {
-    background-color: var(--primario); /* Cambio de color de fondo al hacer hover */
+    cursor: pointer;
 }
 
 .boton--primario {
@@ -246,25 +236,21 @@ h3 {
     background-color: #ff7e3f;
 }
 
-/* Sidebar */
 .sidebar {
-    background-color: var(--gris); /* Fondo de color gris */
-    border-radius: 4px; /* Bordes redondeados */
-    padding: 20px; /* Padding interno */
+    margin-top: 7%;
 }
-
 .sidebar-divider {
     display: none; /* Ocultar la línea en pantallas grandes */
 }
 
-/* Diseño responsivo */
+/* Ajustes de diseño responsivo */
 @media (max-width: 768px) {
-    .contenido-principal {
-        grid-template-columns: 1fr; /* Una sola columna en dispositivos móviles */
+    .blog-post {
+        width: calc(50% - 20px);
     }
 
-    .blog-post {
-        width: 100%; /* Ancho completo en dispositivos móviles */
+    .contenido-principal {
+        grid-template-columns: 1fr; 
     }
 
     .navegacion {
