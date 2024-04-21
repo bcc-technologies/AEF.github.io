@@ -68,8 +68,8 @@
 
             // Check if the provided username and password are correct
             if (username === validUsername && password === validPassword) {
-                // Redirect to google.com upon successful login
-                <meta http-equiv="refresh" content="0; url=https://aefbackoffice.pythonanywhere.com/" />
+                // Redirect to another URL upon successful login
+                window.location.href = 'https://aefbackoffice.pythonanywhere.com/';
             } else {
                 // Display an error message if login fails
                 alert('Invalid username or password');
