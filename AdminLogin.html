@@ -62,35 +62,18 @@
             var username = document.getElementById('username').value;
             var password = document.getElementById('password').value;
 
-            // Create an object with the username and password
-            var data = {
-                username: username,
-                password: password
-            };
-        
-            // Make a POST request to the Flask API endpoint
-            fetch('https://barreiro14.pythonanywhere.com', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => {
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    throw new Error('Invalid username or password');
-                }
-            })
-            .then(data => {
-                // Handle the response
-                alert('Login successful');
-                window.location.href = 'admin.html';
-            })
-            .catch(error => {
-                alert(error.message);
-            });
+            // Hardcoded username and password for demonstration purposes
+            var validUsername = 'admin';
+            var validPassword = 'password';
+
+            // Check if the provided username and password are correct
+            if (username === validUsername && password === validPassword) {
+                // Redirect to another URL upon successful login
+                window.location.href = 'https://aefbackoffice.pythonanywhere.com/';
+            } else {
+                // Display an error message if login fails
+                alert('Invalid username or password');
+            }
         });
     </script>
 </body>
